@@ -1,7 +1,5 @@
 include_recipe 'php'
 
-log node['platform_version']
-
 xcache_conf_path = "#{node['php']['ext_conf_dir']}/20-xcache.ini"
 case node['platform']
 when 'centos'

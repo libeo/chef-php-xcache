@@ -1,5 +1,4 @@
 default['xcache']['extension'] = 'xcache.so'
-
 default['xcache']['admin.auth'] = 'On'
 default['xcache']['admin.user'] = 'admin'
 default['xcache']['admin.pass'] = ''

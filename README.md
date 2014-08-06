@@ -1,7 +1,8 @@
 Description
 ===========
 
-Installs the php xcache module. Set good defaults for
+Installs the php xcache module. Uses a mix of xcache default values and Debian's defaults.
+Description of the configuration options is available on http://xcache.lighttpd.net/wiki/XcacheIni.
 
 Requirements
 ============
@@ -23,14 +24,26 @@ The following Opscode cookbooks are dependencies:
 Attributes
 ==========
 
-* `['xdebug']['cli_color']` = Enable cli colour output, defaults to `1`.
-* `['xdebug']['scream']` = Enable removal for of `@` error suppression functionality, defaults to `0`.
-* `['xdebug']['remote_enable']` = Defaults to `On`.
-* `['xdebug']['remote_autostart']` = Defaults to `0`.
-* `['xdebug']['remote_mode']` = Defaults to `req`.
-* `['xdebug']['remote_connect_back']` = Defaults to `1`.
-* `['xdebug']['idekey']` = Defaults to `macgdbp`.
-* `['xdebug']['file_link_format']` = Defaults to `txmt://open?url=file://%f&line=%1`.
-* `['xdebug']['profiler_enable_trigger']` = Defaults to `0`.
-* `['xdebug']['profiler_enable']` = Defaults to `0`.
-* `['xdebug']['profiler_output_dir']` = Defaults to `/tmp/cachegrind`.
+* `['xcache']['extension']` = 'xcache.so'
+* `['xcache']['admin.auth']` = 'On'
+* `['xcache']['admin.user']` = 'admin'
+* `['xcache']['admin.pass']` = ''
+* `['xcache']['test']` = 'Off'
+* `['xcache']['cacher']` = 'On'
+* `['xcache']['size']` = '16M'
+* `['xcache']['count']` = 1
+* `['xcache']['slots']` = '8K'
+* `['xcache']['ttl']` = 0
+* `['xcache']['gc_interval']` = 300
+* `['xcache']['stat']` = 'On'
+* `['xcache']['var_size']` = '0M'
+* `['xcache']['var_count']` = 1
+* `['xcache']['var_slots']` = '8K'
+* `['xcache']['var_ttl']` = 0
+* `['xcache']['var_maxttl']` = 0
+* `['xcache']['var_gc_interval']` = 300
+* `['xcache']['readonly_protection']` = 'Off'
+* `['xcache']['mmap_path']` = '/dev/zero'
+* `['xcache']['optimizer']` = 'Off'
+* `['xcache']['coverager']` = 'Off'
+* `['xcache']['shm_scheme']` = 'mmap'
