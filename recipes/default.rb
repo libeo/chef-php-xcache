@@ -1,12 +1,11 @@
-include_recipe 'php'
-
-xcache_conf_path = "#{node['php']['ext_conf_dir']}/20-xcache.ini"
 case node['platform']
 when 'centos'
+  xcache_conf_path = '/etc/php.d/xcache.ini'
   include_recipe 'yum-repoforge'
   package_name = 'php-xcache'
 when 'debian'
   package_name = 'php5-xcache'
+  xcache_conf_path = '/etc/php5/conf.d/20-xcache.ini'
 when 'ubuntu'
   package_name = 'php5-xcache'
   if node['platform_version'] < '14.04'

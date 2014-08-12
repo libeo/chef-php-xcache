@@ -32,5 +32,6 @@ suites:
   - name: default
     run_list:
       - recipe[apt]
+      - recipe[php]
       - recipe[php-xcache]
     attributes:
