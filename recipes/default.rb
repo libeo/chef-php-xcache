@@ -3,7 +3,7 @@ when 'centos'
   include_recipe 'yum-repoforge'
 end
 
-package package_name do
+package node['php-xcache']['package'] do
   action :install
 end
 
