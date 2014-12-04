@@ -36,12 +36,12 @@ GEM
     celluloid-io (0.16.1)
       celluloid (>= 0.16.0)
       nio4r (>= 1.0.0)
-    chef (11.12.8)
-      chef-zero (>= 2.0.2, < 2.1)
+    chef (11.16.4)
+      chef-zero (~> 2.1, >= 2.1.4)
       diff-lcs (~> 1.2, >= 1.2.4)
       erubis (~> 2.7)
+      ffi-yajl (~> 1.0)
       highline (~> 1.6, >= 1.6.9)
-      json (>= 1.4.4, <= 1.8.1)
       mime-types (~> 1.16)
       mixlib-authentication (~> 1.3)
       mixlib-cli (~> 1.4)
@@ -50,13 +50,13 @@ GEM
       mixlib-shellout (~> 1.4)
       net-ssh (~> 2.6)
       net-ssh-multi (~> 1.1)
-      ohai (~> 7.0.4)
+      ohai (~> 7.4)
+      plist (~> 3.1.0)
       pry (~> 0.9)
-      rest-client (>= 1.0.4, < 1.7.0)
-      yajl-ruby (~> 1.1)
-    chef-zero (2.0.2)
+      rest-client (>= 1.0.4, <= 1.6.7)
+    chef-zero (2.2.1)
+      ffi-yajl (~> 1.1)
       hashie (~> 2.0)
-      json
       mixlib-log (~> 1.3)
       rack
     cleanroom (1.0.0)
@@ -70,6 +70,9 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
+    ffi-yajl (1.3.1)
+      ffi (~> 1.5)
+      libyajl2 (~> 1.2)
     foodcritic (4.0.0)
       erubis
       gherkin (~> 2.11)
@@ -87,6 +90,7 @@ GEM
     json (1.8.1)
     kitchen-docker (1.5.0)
       test-kitchen (>= 1.0.0)
+    libyajl2 (1.2.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.1)
@@ -113,18 +117,21 @@ GEM
       mini_portile (~> 0.6.0)
     octokit (3.7.0)
       sawyer (~> 0.6.0, >= 0.5.3)
-    ohai (7.0.4)
+    ohai (7.4.0)
+      ffi (~> 1.9)
+      ffi-yajl (~> 1.0)
       ipaddress
       mime-types (~> 1.16)
       mixlib-cli
       mixlib-config (~> 2.0)
       mixlib-log
       mixlib-shellout (~> 1.2)
-      systemu (~> 2.5.2)
-      yajl-ruby
+      systemu (~> 2.6.4)
+      wmi-lite (~> 1.0)
     parser (2.2.0.pre.8)
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
+    plist (3.1.0)
     polyglot (0.3.5)
     powerpack (0.0.9)
     pry (0.10.1)
@@ -134,11 +141,8 @@ GEM
     rack (1.5.2)
     rainbow (2.0.0)
     rake (10.4.2)
-    rdoc (4.1.2)
-      json (~> 1.4)
-    rest-client (1.6.8)
-      mime-types (~> 1.16)
-      rdoc (>= 2.4.2)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     retryable (1.3.6)
     ridley (4.1.0)
       addressable
@@ -174,7 +178,7 @@ GEM
     solve (1.2.1)
       dep_selector (~> 1.0)
       semverse (~> 1.1)
-    systemu (2.5.2)
+    systemu (2.6.4)
     test-kitchen (1.2.1)
       mixlib-shellout (~> 1.2)
       net-scp (~> 1.1)
@@ -189,6 +193,7 @@ GEM
     varia_model (0.4.0)
       buff-extensions (~> 1.0)
       hashie (>= 2.0.2, < 3.0.0)
+    wmi-lite (1.0.0)
     yajl-ruby (1.2.1)
 
 PLATFORMS
@@ -196,8 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   berkshelf
-  chef (~> 11.12.8)
-  chef-zero
+  chef
   foodcritic
   kitchen-docker
   rubocop
